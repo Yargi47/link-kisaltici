@@ -8,7 +8,7 @@ export default function RedirectPage() {
   const params = useParams();
   const shortCode = params.shortCode as string;
   const [countdown, setCountdown] = useState(5);
-  const [linkData, setLinkData] = useState<Record<string, any> | null>(null);
+  const [linkData, setLinkData] = useState<Record<string, unknown> | null>(null);
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function RedirectPage() {
         }, 1000);
 
         return () => clearInterval(timer);
-      } catch (err) {
+      } catch {
         setError('Bir hata oluştu');
       }
     };
@@ -50,7 +50,7 @@ export default function RedirectPage() {
 
   const redirectNow = () => {
     if (linkData) {
-      window.location.href = linkData.originalUrl;
+      window.location.href = linkData.originalUrl as string;
     }
   };
 
@@ -91,7 +91,7 @@ export default function RedirectPage() {
               </p>
               <div className="p-4 bg-blue-50 rounded-lg">
                 <p className="text-blue-800 font-medium break-all">
-                  {linkData.originalUrl}
+                  {linkData.originalUrl as string}
                 </p>
               </div>
             </div>

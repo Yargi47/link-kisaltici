@@ -36,21 +36,18 @@ export async function readDatabase(): Promise<Database> {
   try {
     // Önce cache'den dene
     const cached = cache.get(DB_CACHE_KEY);
-    if (cached) {
-      return cached;
+    if (cached && typeof cached === 'object' && 'links' in cached && 'stats' in cached) {
+      return cached as Database;
     }
 
     // Cache'de yoksa dosyadan oku
     const data = await fs.readFile(DB_PATH, 'utf-8');
     const db = JSON.parse(data);
-    
     // Cache'e kaydet
     cache.set(DB_CACHE_KEY, db, CACHE_TTL);
-    
-    return db;
-  } catch (error) {
-    // Eğer dosya yoksa varsayılan veri döndür
-    const defaultDb = { links: {}, stats: {} };
+    return db as Database;
+  } catch {
+    const defaultDb: Database = { links: {}, stats: {} };
     cache.set(DB_CACHE_KEY, defaultDb, CACHE_TTL);
     return defaultDb;
   }
@@ -72,22 +69,27 @@ export async function writeDatabase(data: Database): Promise<void> {
 export async function readLinkData(shortCode: string): Promise<LinkData | null> {
   try {
     const linkCacheKey = `link_${shortCode}`;
-    
     // Önce cache'den dene
     const cached = cache.get(linkCacheKey);
-    if (cached) {
-      return cached;
+    if (
+      cached &&
+      typeof cached === 'object' &&
+      'id' in cached &&
+      'originalUrl' in cached &&
+      'shortCode' in cached &&
+      'customerId' in cached &&
+      'createdAt' in cached
+    ) {
+      return cached as LinkData;
     }
 
     // Cache'de yoksa tüm database'i oku
     const db = await readDatabase();
     const linkData = db.links[shortCode] || null;
-    
     // Bulunan linki cache'e kaydet (daha uzun süre)
     if (linkData) {
       cache.set(linkCacheKey, linkData, 600000); // 10 dakika
     }
-    
     return linkData;
   } catch (error) {
     console.error('Link okuma hatası:', error);

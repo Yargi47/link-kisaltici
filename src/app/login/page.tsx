@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Shield, User, Eye, EyeOff } from 'lucide-react';
+import { User, Eye, EyeOff } from 'lucide-react';
 import Link from 'next/link';
 
 export default function LoginPage() {
@@ -121,7 +121,7 @@ export default function LoginPage() {
                 Giriş yapılıyor...
               </div>
             ) : (
-              'Giriş Yap'
+              "Giriş Yap"
             )}
           </button>
         </form>

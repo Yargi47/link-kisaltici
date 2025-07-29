@@ -10,13 +10,13 @@ export default function AdminLoginPage() {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const router = useRouter();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    setError('');
+    setErrorMessage('');
 
     try {
       const response = await fetch('/api/auth/admin-login', {
@@ -36,10 +36,10 @@ export default function AdminLoginPage() {
         // Admin paneline yönlendir
         router.push('/admin');
       } else {
-        setError(data.error || 'Giriş başarısız');
+        setErrorMessage(data.error || 'Giriş başarısız');
       }
     } catch (error) {
-      setError('Bir hata oluştu');
+      setErrorMessage('Bir hata oluştu');
     } finally {
       setIsLoading(false);
     }
@@ -100,9 +100,9 @@ export default function AdminLoginPage() {
             </div>
           </div>
 
-          {error && (
+          {errorMessage && (
             <div className="p-3 bg-red-50 border border-red-200 rounded-lg">
-              <p className="text-red-800 text-sm">{error}</p>
+              <p className="text-red-800 text-sm">{errorMessage}</p>
             </div>
           )}
 
