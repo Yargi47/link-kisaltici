@@ -10,13 +10,13 @@ export default function AdminLoginPage() {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
+  // Hata mesajı state'i kaldırıldı
   const router = useRouter();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    setErrorMessage('');
+    // Hata mesajı kaldırıldı
 
     try {
       const response = await fetch('/api/auth/admin-login', {
@@ -36,10 +36,10 @@ export default function AdminLoginPage() {
         // Admin paneline yönlendir
         router.push('/admin');
       } else {
-        setErrorMessage(data.error || 'Giriş başarısız');
+        // Hata mesajı kaldırıldı
       }
     } catch (error) {
-      setErrorMessage('Bir hata oluştu');
+      // Hata mesajı kaldırıldı
     } finally {
       setIsLoading(false);
     }

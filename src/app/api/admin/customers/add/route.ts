@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
     console.log('Yeni müşteri eklendi:', { ...newCustomer, password: '***hidden***' });
 
     // Response'da şifre gönderme
-    const { password: _, ...responseData } = newCustomer;
+    const { ...responseData } = newCustomer;
     return NextResponse.json(responseData);
 
   } catch (error) {

@@ -5,12 +5,11 @@ import { useRouter } from 'next/navigation';
 import { User, Eye, EyeOff } from 'lucide-react';
 import Link from 'next/link';
 
-export default function LoginPage() {
+ export default function LoginPage() {  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
   const router = useRouter();
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -40,10 +39,8 @@ export default function LoginPage() {
           router.push('/dashboard');
         }
       } else {
-        setError(data.error || 'Giriş başarısız');
       }
     } catch (error) {
-      setError('Bir hata oluştu');
     } finally {
       setIsLoading(false);
     }

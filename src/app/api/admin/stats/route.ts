@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { readDatabase } from '@/lib/database';
 import { getAllCustomers } from '@/lib/customers';
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     // TODO: Admin authentication kontrolü
     // const isAdmin = await checkAdminAuth(request);

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { readDatabase } from '@/lib/database';
-import { getCustomerByEmail, getAllCustomers } from '@/lib/customers';
+import { getAllCustomers } from '@/lib/customers';
 
 export async function GET(request: NextRequest) {
   try {
@@ -29,7 +29,7 @@ export async function GET(request: NextRequest) {
     
     // Sadece bu müşterinin linklerini filtrele
     const customerLinks = Object.entries(db.links)
-      .filter(([_, linkData]) => linkData.customerId === customerId);
+      .filter(([, linkData]) => linkData.customerId === customerId);
     
     const totalLinks = customerLinks.length;
     const totalClicks = customerLinks.reduce((sum, [shortCode]) => {
