@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getAllCustomers } from '@/lib/customers';
 
-export async function GET(request: NextRequest) {
+  export async function GET(_request: NextRequest) {
   try {
     // TODO: Admin authentication kontrolü
     // const isAdmin = await checkAdminAuth(request);

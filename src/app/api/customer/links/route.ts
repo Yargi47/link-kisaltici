@@ -19,13 +19,12 @@ export async function GET(request: NextRequest) {
     // Sadece bu müşterinin linklerini filtrele
     const customerLinks = Object.entries(db.links)
       .filter(([_, linkData]) => linkData.customerId === customerId)
+
       .map(([shortCode, linkData]) => {
         const clicks = db.stats[shortCode]?.length || 0;
-        
         return {
           id: linkData.id,
           originalUrl: linkData.originalUrl,
-          shortCode,
           shortUrl: `${request.nextUrl.origin}/${shortCode}`,
           clicks,
           createdAt: linkData.createdAt,

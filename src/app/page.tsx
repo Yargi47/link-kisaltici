@@ -18,11 +18,11 @@ export default function HomePage() {
     setError('');
 
     try {
-      const response = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
-      });
+          const response = await fetch('/api/auth/login', { 
+            method: 'POST', 
+            headers: { 'Content-Type': 'application/json' }, 
+            body: JSON.stringify({ email, password }) 
+          }); 
 
       const data = await response.json();
 
@@ -38,7 +38,8 @@ export default function HomePage() {
         setError(data.error || 'Giriş başarısız');
       }
     } catch (error) {
-      setError('Bir hata oluştu');
+          // Error handling without using the error variable
+          setError('Bir hata oluştu'); 
     } finally {
       setIsLoading(false);
     }

@@ -114,10 +114,10 @@ export default function AdminLoginPage() {
             {isLoading ? (
               <div className="flex items-center justify-center gap-2">
                 <div className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></div>
-                Giriş yapılıyor...
+                {"Giriş yapılıyor..."}
               </div>
             ) : (
-              '🔐 Admin Girişi'
+              "🔐 Admin Girişi"
             )}
           </button>
         </form>
