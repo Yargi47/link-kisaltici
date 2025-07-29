@@ -1,0 +1,126 @@
+{
+  "links": {
+    "merso": {
+      "id": "link_1753752477792",
+      "originalUrl": "https://mersoobahis.com/",
+      "shortCode": "merso",
+      "createdAt": "2025-07-29T01:27:57.792Z",
+      "customCode": true,
+      "customerId": "cust_1"
+    },
+    "mersoo": {
+      "id": "link_1753752630805",
+      "originalUrl": "https://mersoobahis.com/",
+      "shortCode": "mersoo",
+      "createdAt": "2025-07-29T01:30:30.805Z",
+      "customCode": true,
+      "customerId": "cust_1"
+    },
+    "mersooo": {
+      "id": "link_1753752717690",
+      "originalUrl": "https://mersoobahis.com/",
+      "shortCode": "mersooo",
+      "createdAt": "2025-07-29T01:31:57.690Z",
+      "customCode": true,
+      "customerId": "cust_1"
+    },
+    "mersobahis": {
+      "id": "link_1753752990356",
+      "originalUrl": "https://www.mersobahis134.com/home",
+      "shortCode": "mersobahis",
+      "createdAt": "2025-07-29T01:36:30.356Z",
+      "customCode": true,
+      "customerId": "cust_1"
+    },
+    "kntad": {
+      "id": "link_1753753458777",
+      "originalUrl": "https://mersoobahis.com/",
+      "shortCode": "kntad",
+      "createdAt": "2025-07-29T01:44:18.777Z",
+      "customCode": true,
+      "customerId": "cust_1"
+    },
+    "kamekayg": {
+      "id": "link_1753754162542",
+      "originalUrl": "https://www.youtube.com/",
+      "shortCode": "kamekayg",
+      "createdAt": "2025-07-29T01:56:02.542Z",
+      "customCode": true,
+      "customerId": "cust_1"
+    },
+    "gelcasinoseo": {
+      "id": "link_1753755979943",
+      "originalUrl": "https://gelcasinogir.com/",
+      "shortCode": "gelcasinoseo",
+      "customerId": "cust_1753755049061",
+      "createdAt": "2025-07-29T02:26:19.943Z",
+      "customCode": true
+    }
+  },
+  "stats": {
+    "merso": [
+      {
+        "timestamp": "2025-07-29T01:28:07.592Z",
+        "ip": "::1",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      }
+    ],
+    "mersoo": [
+      {
+        "timestamp": "2025-07-29T01:30:41.302Z",
+        "ip": "::1",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+        "referer": "http://localhost:3001/mersoo"
+      }
+    ],
+    "mersooo": [
+      {
+        "timestamp": "2025-07-29T01:32:07.726Z",
+        "ip": "::1",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      }
+    ],
+    "mersobahis": [
+      {
+        "timestamp": "2025-07-29T01:36:39.904Z",
+        "ip": "::1",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      }
+    ],
+    "kntad": [],
+    "kamekayg": [
+      {
+        "timestamp": "2025-07-29T01:56:10.712Z",
+        "ip": "::1",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      {
+        "timestamp": "2025-07-29T02:00:24.412Z",
+        "ip": "::1",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      }
+    ],
+    "gelcasinoseo": [
+      {
+        "timestamp": "2025-07-29T02:26:32.265Z",
+        "ip": "::1",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      {
+        "timestamp": "2025-07-29T02:27:17.193Z",
+        "ip": "::1",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      {
+        "timestamp": "2025-07-29T02:37:15.017Z",
+        "ip": "::1",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      },
+      {
+        "timestamp": "2025-07-29T13:49:47.578Z",
+        "ip": "::1",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+      }
+    ]
+  }
+}
