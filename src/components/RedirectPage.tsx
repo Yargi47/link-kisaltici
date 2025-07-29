@@ -8,7 +8,7 @@ export default function RedirectPage() {
   const params = useParams();
   const shortCode = params.shortCode as string;
   const [countdown, setCountdown] = useState(5);
-  const [linkData, setLinkData] = useState<any>(null);
+  const [linkData, setLinkData] = useState<Record<string, any> | null>(null);
   const [error, setError] = useState('');
 
   useEffect(() => {

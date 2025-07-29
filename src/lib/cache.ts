@@ -1,6 +1,6 @@
 // Memory-based cache sistemi
 interface CacheData {
-  data: any;
+  data: unknown;
   timestamp: number;
   ttl: number; // Time to live (ms)
 }
@@ -8,7 +8,7 @@ interface CacheData {
 class SimpleCache {
   private cache = new Map<string, CacheData>();
   
-  set(key: string, data: any, ttlMs: number = 300000) { // 5 dakika default
+  set<T>(key: string, data: T, ttlMs: number = 300000) { // 5 dakika default
     this.cache.set(key, {
       data,
       timestamp: Date.now(),
@@ -16,7 +16,7 @@ class SimpleCache {
     });
   }
   
-  get(key: string): any | null {
+  get<T>(key: string): T | null {
     const cached = this.cache.get(key);
     
     if (!cached) return null;
@@ -27,7 +27,7 @@ class SimpleCache {
       return null;
     }
     
-    return cached.data;
+    return cached.data as T;
   }
   
   delete(key: string) {

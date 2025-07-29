@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Şifre güncellemesi - boşsa güncelleme
-    const updates: any = { ...customerData };
+    const updates = { ...customerData };
     if (!updates.password || updates.password.trim() === '') {
       delete updates.password;
     }

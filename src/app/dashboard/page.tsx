@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Link, TrendingUp, QrCode, Copy, ExternalLink, Plus, BarChart3, LogOut, Edit, Check, X, CheckSquare, Square, Trash2 } from 'lucide-react';
+import { Link, TrendingUp, Copy, Plus, BarChart3, LogOut, Edit, X, Trash2 } from 'lucide-react';
 import { requireAuth, logout } from '@/lib/auth';
 
 interface CustomerLink {
@@ -28,7 +28,7 @@ export default function CustomerDashboard() {
   const [showCreateForm, setShowCreateForm] = useState(false);
   const [newUrl, setNewUrl] = useState('');
   const [customCode, setCustomCode] = useState('');
-  const [auth, setAuth] = useState<any>(null);
+  const [auth, setAuth] = useState<{ user: { id: string; name: string } } | null>(null);
   
   // Bulk edit states
   const [selectedLinks, setSelectedLinks] = useState<string[]>([]);
