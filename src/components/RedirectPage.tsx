@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
 export default function RedirectPage() {
@@ -62,12 +63,12 @@ export default function RedirectPage() {
             Link Bulunamadı
           </h1>
           <p className="text-gray-600 mb-6">{error}</p>
-          <a
+          <Link
             href="/"
             className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
           >
             Ana Sayfaya Dön
-          </a>
+          </Link>
         </div>
       </div>
     );
@@ -113,12 +114,12 @@ export default function RedirectPage() {
               Hemen Git →
             </button>
             
-            <a
+            <Link
               href="/"
               className="block w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-3 px-6 rounded-lg transition-colors"
             >
               Ana Sayfaya Dön
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -130,12 +131,12 @@ export default function RedirectPage() {
           <p className="text-gray-600 text-sm mb-4">
             Ücretsiz, hızlı ve güvenilir link kısaltma hizmeti. QR kod ve detaylı istatistikler.
           </p>
-          <a
+          <Link
             href="/"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm"
           >
             Kendi Linkinizi Kısaltın
-          </a>
+          </Link>
         </div>
       </div>
     </div>

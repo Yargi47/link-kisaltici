@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Copy, Link, QrCode, TrendingUp } from 'lucide-react';
+import LinkNext from 'next/link';
 import QRCodeComponent from './QRCodeComponent';
 
 export default function URLShortener() {
@@ -74,12 +75,12 @@ export default function URLShortener() {
           
           {/* Panel Linkleri */}
           <div className="flex justify-center gap-4 mt-6">
-            <a
+            <LinkNext
               href="/login"
               className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
             >
-              � Giriş Yap
-            </a>
+              Giriş Yap
+            </LinkNext>
           </div>
         </div>
 

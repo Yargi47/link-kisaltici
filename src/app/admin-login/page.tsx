@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Shield, Eye, EyeOff } from 'lucide-react';
+import Link from 'next/link';
 
 export default function AdminLoginPage() {
   const [email, setEmail] = useState('');
@@ -132,12 +133,12 @@ export default function AdminLoginPage() {
 
         {/* Back to Home */}
         <div className="mt-6 text-center">
-          <a
+          <Link
             href="/"
             className="text-sm text-gray-600 hover:text-red-600 transition-colors"
           >
             ← Ana Sayfaya Dön
-          </a>
+          </Link>
         </div>
       </div>
     </div>
