@@ -31,7 +31,7 @@ export default function AdminDashboard() {
   const [stats, setStats] = useState<AdminStats | null>(null);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('dashboard');
-  const [auth, setAuth] = useState<any>(null);
+  const [auth, setAuth] = useState<{ user: { name: string } } | null>(null);
   const [showAddModal, setShowAddModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [selectedCustomer, setSelectedCustomer] = useState<Customer | null>(null);
@@ -86,7 +86,7 @@ export default function AdminDashboard() {
         setCustomers(prev => 
           prev.map(customer => 
             customer.id === customerId 
-              ? { ...customer, status: newStatus as any }
+              ? { ...customer, status: newStatus as Customer["status"] }
               : customer
           )
         );

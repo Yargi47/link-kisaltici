@@ -1,4 +1,5 @@
 import { redirect } from 'next/navigation';
+import Link from 'next/link';
 import { readLinkData, queueClick } from '@/lib/database';
 import { headers } from 'next/headers';
 
@@ -46,12 +47,12 @@ export default async function RedirectPage({ params }: RedirectPageProps) {
           <p className="text-gray-600 mb-6">
             Aradığınız kısa link mevcut değil veya silinmiş olabilir.
           </p>
-          <a
+          <Link
             href="/"
             className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
           >
             Ana Sayfaya Dön
-          </a>
+          </Link>
         </div>
       </div>
     );
