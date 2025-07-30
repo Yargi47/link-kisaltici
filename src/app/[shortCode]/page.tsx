@@ -3,22 +3,18 @@ import Link from 'next/link';
 import { readLinkData, queueClick } from '@/lib/database';
 import { headers } from 'next/headers';
 
-// Affiliate parametrelerini URL'e ekleyen fonksiyon
 function buildAffiliateUrl(originalUrl: string, linkId: string, affiliateCode?: string): string {
   try {
     const url = new URL(originalUrl);
     
-    // Link ID'sini ekle (l_id)
     url.searchParams.set('l_id', linkId);
     
-    // Eğer affiliate code varsa ekle (a_id)
     if (affiliateCode) {
       url.searchParams.set('a_id', affiliateCode);
     }
     
     return url.toString();
   } catch (error) {
-    // URL parse edilemezse orijinal URL'i döndür
     console.error('URL parse hatası:', error);
     return originalUrl;
   }
@@ -32,11 +28,9 @@ export default async function RedirectPage({ params }: RedirectPageProps) {
   const { shortCode } = await params;
   const headersList = await headers();
 
-  // Optimize edilmiş link okuma
   const linkData = await readLinkData(shortCode);
 
   if (!linkData) {
-    // 404 sayfası
     return (
       <div className="min-h-screen bg-gradient-to-br from-red-50 to-pink-100 flex items-center justify-center p-4">
         <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full text-center">
@@ -58,7 +52,6 @@ export default async function RedirectPage({ params }: RedirectPageProps) {
     );
   }
 
-  // Click kaydını kuyruğa ekle (asenkron, yönlendirmeyi bloklamaz)
   const clickData = {
     timestamp: new Date().toISOString(),
     ip: headersList.get('x-forwarded-for') || headersList.get('x-real-ip') || 'unknown',
@@ -66,14 +59,11 @@ export default async function RedirectPage({ params }: RedirectPageProps) {
     referer: headersList.get('referer') || undefined
   };
 
-  // Asenkron olarak kuyruğa ekle
   queueClick(shortCode, clickData).catch(error => {
     console.error('Click queue hatası:', error);
   });
 
-  // Affiliate parametrelerini ekleyerek URL'i hazırla
   const redirectUrl = buildAffiliateUrl(linkData.originalUrl, linkData.id, linkData.affiliateCode);
 
-  // Hemen yönlendir (click kaydını beklemez)
   redirect(redirectUrl);
 }

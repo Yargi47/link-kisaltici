@@ -1,30 +1,3 @@
 {
-  "customers": {
-    "cust_1753754998201": {
-      "name": "merso",
-      "email": "mersobahis@gmail.com",
-      "password": "merso45",
-      "plan": "free",
-      "monthlyFee": 0,
-      "status": "active",
-      "id": "cust_1753754998201",
-      "linksCount": 0,
-      "totalClicks": 0,
-      "createdAt": "2025-07-29T02:09:58.201Z",
-      "lastLogin": "2025-07-29T02:10:05.489Z"
-    },
-    "cust_1753755049061": {
-      "name": "derdo",
-      "email": "derdo@gmail.com",
-      "password": "Derdo45",
-      "plan": "free",
-      "monthlyFee": 0,
-      "status": "active",
-      "id": "cust_1753755049061",
-      "linksCount": 0,
-      "totalClicks": 0,
-      "createdAt": "2025-07-29T02:10:49.061Z",
-      "lastLogin": "2025-07-29T13:49:19.639Z"
-    }
-  }
+  "customers": {}
 }
